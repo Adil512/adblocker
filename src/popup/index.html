@@ -1,0 +1,38 @@
+<!-- src/popup/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBlocker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AdBlocker</h1>
+            <label class="switch">
+                <input type="checkbox" id="toggleButton" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Ads Blocked</span>
+                <span class="stat-value" id="blockCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Status</span>
+                <span class="stat-value status-active" id="status">Active</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="options" class="button">Settings</button>
+            <button id="report" class="button">Report Issue</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

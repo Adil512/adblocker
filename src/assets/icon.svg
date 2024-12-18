@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="#2196F3"/>
+  
+  <!-- Shield Shape -->
+  <path d="M64 24 C40 24 40 44 40 44 L40 74 C40 84 52 96 64 100 C76 96 88 84 88 74 L88 44 C88 44 88 24 64 24" fill="white"/>
+  
+  <!-- Stop Symbol -->
+  <rect x="52" y="52" width="24" height="4" fill="#2196F3" transform="rotate(45, 64, 64)"/>
+  <rect x="52" y="52" width="24" height="4" fill="#2196F3" transform="rotate(-45, 64, 64)"/>
+</svg>

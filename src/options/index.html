@@ -1,0 +1,91 @@
+<!-- src/options/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBlocker Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AdBlocker Settings</h1>
+            <div class="version">Version 1.0.0</div>
+        </header>
+
+        <main>
+            <section class="card" id="generalSettings">
+                <h2>General Settings</h2>
+                <div class="setting-item">
+                    <label for="enableAdBlock">Enable Ad Blocking</label>
+                    <label class="switch">
+                        <input type="checkbox" id="enableAdBlock" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="showCounter">Show Block Counter</label>
+                    <label class="switch">
+                        <input type="checkbox" id="showCounter" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="card" id="filterLists">
+                <h2>Filter Lists</h2>
+                <div class="filter-list">
+                    <div class="setting-item">
+                        <label for="easyList">EasyList (Recommended)</label>
+                        <label class="switch">
+                            <input type="checkbox" id="easyList" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="customFilters">Custom Filters</label>
+                        <label class="switch">
+                            <input type="checkbox" id="customFilters">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" id="whitelist">
+                <h2>Whitelist</h2>
+                <div class="whitelist-container">
+                    <div class="input-group">
+                        <input type="text" id="whitelistInput" placeholder="Enter website URL (e.g., example.com)">
+                        <button id="addWhitelist" class="button">Add</button>
+                    </div>
+                    <ul id="whitelistItems" class="whitelist-items">
+                        <!-- Whitelist items will be added here dynamically -->
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card" id="statistics">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value" id="totalBlocked">0</span>
+                        <span class="stat-label">Ads Blocked</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="totalPages">0</span>
+                        <span class="stat-label">Pages Protected</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <button id="saveSettings" class="button primary">Save Settings</button>
+            <button id="resetSettings" class="button">Reset to Default</button>
+        </footer>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

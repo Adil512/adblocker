@@ -1,0 +1,16 @@
+{
+  "name": "adblocker",
+  "version": "1.0.0",
+  "description": "Get the top-rated Ad Blocker for Chrome, Firefox, Edge , Brave now! Stop ads, protect privacy, and make 2025 your smoothest browsing year yet",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
