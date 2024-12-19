@@ -1,28 +1,21 @@
 'use client'
+
+import React from 'react'
 import { Shield, Zap, Lock, Chrome, Download } from 'lucide-react'
 import { useState } from 'react'
 
-// Add these type definitions
 interface StatsCardProps {
-  icon: JSX.Element;  // Changed from React.ReactNode to JSX.Element
+  icon: JSX.Element;
   number: string;
   label: string;
 }
 
 interface FeatureCardProps {
-  icon: JSX.Element;  // Changed from React.ReactNode to JSX.Element
+  icon: JSX.Element;
   title: string;
   description: string;
 }
 
-// Update the StatsCard component with explicit typing
-const StatsCard: React.FC<StatsCardProps> = ({ icon, number, label }) => (
-  <div className="bg-white/5 rounded-2xl p-8 text-center transform transition hover:scale-105">
-    <div className="flex justify-center mb-4">{icon}</div>
-    <div className="text-4xl font-bold text-white mb-2">{number}</div>
-    <div className="text-gray-400">{label}</div>
-  </div>
-)
 export default function Home() {
   const [activeBrowser, setActiveBrowser] = useState('chrome')
 
@@ -40,7 +33,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <a href="https://adblocker.dev/" className="flex items-center space-x-2">
+              <a href="#" className="flex items-center space-x-2">
                 <Shield className="w-8 h-8 text-blue-500" />
                 <span className="text-white font-bold text-xl">AdBlocker</span>
               </a>
@@ -52,7 +45,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://github.com/Adil512/adblocker" 
+              <a href="https://github.com/yourusername/adblocker" 
                  className="text-gray-300 hover:text-white transition">GitHub</a>
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
                 Download Now
@@ -62,7 +55,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with 3D Animation */}
+      {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
         <div className="relative z-10 text-center px-4">
@@ -73,37 +66,20 @@ export default function Home() {
             Experience the web without distractions. Block ads, trackers, and malware across all major browsers.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-  <a 
-    href="https://adblocker.dev/" 
-    className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
-  >
-    <Download className="w-5 h-5 group-hover:animate-bounce" />
-    Install Ad Blocker
-  </a>
-  <a 
-    href="https://adblocker.dev/"
-    className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition transform hover:scale-105"
-  >
-    Learn More
-  </a>
-</div>
-        </div>
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                opacity: 0.1
-              }}
+            <a 
+              href="https://adblocker.dev/" 
+              className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
             >
-              <Shield className="w-12 h-12 text-blue-500" />
-            </div>
-          ))}
+              <Download className="w-5 h-5 group-hover:animate-bounce" />
+              Install Ad Blocker
+            </a>
+            <a 
+              href="https://adblocker.dev/"
+              className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition transform hover:scale-105"
+            >
+              Learn More
+            </a>
+          </div>
         </div>
       </div>
 
@@ -132,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Live Stats Section */}
+      {/* Stats Section */}
       <section id="stats" className="py-24 bg-gradient-to-r from-blue-900/50 to-purple-900/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
@@ -155,21 +131,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Features Section */}
       <section id="features" className="py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             Advanced Features
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, i) => (
-              <FeatureCard
-                key={i}
-                title="Smart Detection"
-                description="Advanced algorithms to detect and block even the most sophisticated ads"
-                icon={<Shield className="w-6 h-6 text-blue-500" />}
-              />
-            ))}
+            <FeatureCard
+              icon={<Shield className="w-6 h-6 text-blue-500" />}
+              title="Smart Detection"
+              description="Advanced algorithms to detect and block even the most sophisticated ads"
+            />
+            <FeatureCard
+              icon={<Lock className="w-6 h-6 text-blue-500" />}
+              title="Privacy Protection"
+              description="Keep your browsing private and secure from trackers"
+            />
+            <FeatureCard
+              icon={<Zap className="w-6 h-6 text-blue-500" />}
+              title="Performance Boost"
+              description="Enjoy faster page loads with reduced resource usage"
+            />
           </div>
         </div>
       </section>
@@ -214,9 +197,15 @@ export default function Home() {
   )
 }
 
+const StatsCard = ({ icon, number, label }: StatsCardProps) => (
+  <div className="bg-white/5 rounded-2xl p-8 text-center transform transition hover:scale-105">
+    <div className="flex justify-center mb-4">{icon}</div>
+    <div className="text-4xl font-bold text-white mb-2">{number}</div>
+    <div className="text-gray-400">{label}</div>
+  </div>
+)
 
-
-const FeatureCard = ({ icon, title, description }) => (
+const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
   <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg transform transition hover:scale-105">
     <div className="flex items-center mb-4">
       {icon}
