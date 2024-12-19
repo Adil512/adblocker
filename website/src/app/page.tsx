@@ -1,5 +1,6 @@
 'use client'
-import { Shield, Zap, Lock, Chrome, Download } from 'lucide-react'import { useState } from 'react'
+import { Shield, Zap, Lock, Chrome, Download } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Home() {
   const [activeBrowser, setActiveBrowser] = useState('chrome')
