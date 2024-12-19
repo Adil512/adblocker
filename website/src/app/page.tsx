@@ -2,6 +2,27 @@
 import { Shield, Zap, Lock, Chrome, Download } from 'lucide-react'
 import { useState } from 'react'
 
+// Add these type definitions
+interface StatsCardProps {
+  icon: JSX.Element;  // Changed from React.ReactNode to JSX.Element
+  number: string;
+  label: string;
+}
+
+interface FeatureCardProps {
+  icon: JSX.Element;  // Changed from React.ReactNode to JSX.Element
+  title: string;
+  description: string;
+}
+
+// Update the StatsCard component with explicit typing
+const StatsCard: React.FC<StatsCardProps> = ({ icon, number, label }) => (
+  <div className="bg-white/5 rounded-2xl p-8 text-center transform transition hover:scale-105">
+    <div className="flex justify-center mb-4">{icon}</div>
+    <div className="text-4xl font-bold text-white mb-2">{number}</div>
+    <div className="text-gray-400">{label}</div>
+  </div>
+)
 export default function Home() {
   const [activeBrowser, setActiveBrowser] = useState('chrome')
 
@@ -193,13 +214,7 @@ export default function Home() {
   )
 }
 
-const StatsCard = ({ icon, number, label }) => (
-  <div className="bg-white/5 rounded-2xl p-8 text-center transform transition hover:scale-105">
-    <div className="flex justify-center mb-4">{icon}</div>
-    <div className="text-4xl font-bold text-white mb-2">{number}</div>
-    <div className="text-gray-400">{label}</div>
-  </div>
-)
+
 
 const FeatureCard = ({ icon, title, description }) => (
   <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg transform transition hover:scale-105">
